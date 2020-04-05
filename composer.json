@@ -1,0 +1,21 @@
+{
+    "name": "dimensi0n/simple-query",
+    "description": "Provides a simple and easy to use query builder",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erwan ROUSSEL",
+            "email": "erwan.roussel51@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SimpleForm\\" : "src/"
+        }
+    },
+    "require": {}
+}
