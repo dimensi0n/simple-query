@@ -12,10 +12,12 @@
             "email": "erwan.roussel51@gmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "SimpleForm\\" : "src/"
-        }
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-0": {"SimpleQuery\\": "src/"},
+        "psr-4": {"SimpleQuery\\": "src/"}
+    }
 }

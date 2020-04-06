@@ -1,2 +1,5 @@
 # Vendor
 vendor
+
+# Test database
+testdb.sqlite

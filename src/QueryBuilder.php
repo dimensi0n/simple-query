@@ -3,8 +3,10 @@ namespace SimpleQuery;
 
 /**
  * Provides a simple query builder
+ * @author Erwan ROUSSEL
  */
-class QueryBuilder extends \PDO {
+class QueryBuilder extends \PDO 
+{
     
     /**
      * @param mixed $dsn
@@ -139,7 +141,7 @@ class QueryBuilder extends \PDO {
      * 
      * @return PDOStatement
      */
-    public function select(string $from, ?array $fields = null, ?array $opts = null) : \PDOStatement
+    public function select(string $from, ?array $fields = null, ?array $where = null ,?array $opts = null) : \PDOStatement
     {
         try {
             if(isset($fields)) {
@@ -149,11 +151,13 @@ class QueryBuilder extends \PDO {
                 $sql = 'SELECT *';
             }
             $sql .= ' FROM '.$from.' ';
-            if(isset($opts)) {
-                $sql .= implode(' ', $opts);
-            }
+            isset($where) ? $sql .= ' WHERE '.$this->generateKeys($where) : null;
+            isset($opts) ? $sql .= implode(' ', $opts) : null;
 
-            return $this->query($sql);
+            $statement = $this->prepare($sql);
+            isset($where) ? $this->bindParams($where, $statement) : null;
+            $statement->execute();
+            return $statement;
         } catch (\PDOException $exception) {
             throw $exception;
         }
