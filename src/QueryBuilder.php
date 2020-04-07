@@ -22,6 +22,7 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Get generated param name for the SQL query
      * @param string $key
      * @param mixed $value
      * 
@@ -36,6 +37,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Generate keys for SQL query
+     * 
      * @param array $data
      * 
      * @return string
@@ -53,6 +56,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Bind given params to statement
+     * 
      * @param array $data
      * @param \PDOStatement $statement
      * 
@@ -71,6 +76,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Create a table
+     * 
      * @param string $name
      * @param array $fields
      * 
@@ -97,6 +104,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Drop the table
+     * 
      * @param string $name
      * @param string $opts=''
      * 
@@ -115,6 +124,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Insert data into table
+     * 
      * @param string $into
      * @param array $data
      * 
@@ -135,13 +146,15 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Select data from table
+     * 
      * @param string $from
-     * @param ?array $fields
-     * @param ?array $opts
+     * @param array $fields
+     * @param array $opts
      * 
      * @return PDOStatement
      */
-    public function select(string $from, ?array $fields = null, ?array $where = null ,?array $opts = null) : \PDOStatement
+    public function select(string $from, array $fields = null, array $where = null ,array $opts = null) : \PDOStatement
     {
         try {
             if(isset($fields)) {
@@ -164,6 +177,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Update data in table
+     * 
      * @param string $table
      * @param array $set
      * @param array $where
@@ -189,6 +204,8 @@ class QueryBuilder extends \PDO
     }
 
     /**
+     * Remove data from table
+     * 
      * @param string $table
      * @param array $where
      * 

@@ -3,6 +3,7 @@
     "description": "Provides a simple and easy to use query builder",
     "type": "library",
     "require-dev": {
+        "phpdocumentor/phpdocumentor":"^2.9",
         "phpunit/phpunit": "^9.1"
     },
     "license": "MIT",
@@ -13,7 +14,8 @@
         }
     ],
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "docs": "vendor/bin/phpdoc"
     },
     "require": {},
     "autoload": {
