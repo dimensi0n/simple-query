@@ -27,7 +27,7 @@ class QueryBuilderTest extends TestCase
             $queryBuilder->create('users', [
                 'username' => ['type' => 'varchar (15)', 'notNullable' => true, 'unique' => true],
                 'password' => ['type' => 'varchar (200)'],
-                'age' => ['type' => 'int', 'default' => 20]
+                'age' => ['type' => 'integer', 'default' => 20]
             ]);
             $statement = $queryBuilder->select('sqlite_master', ['name'], ['type' => 'table']);
             $statement->execute();
