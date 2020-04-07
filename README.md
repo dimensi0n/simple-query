@@ -21,7 +21,8 @@ Create a table :
 
 ```php
 $queryBuilder->create('users', [
-    'username' => ['type' => 'varchar (15)', 'notNullable' => true, 'unique' => true],        'password' => ['type' => 'varchar (200)'],
+    'username' => ['type' => 'varchar (15)', 'notNullable' => true, 'unique' => true],
+    'password' => ['type' => 'varchar (200)'],
     'age' => ['type' => 'int', 'default' => 20]
 ]); 
 /* CREATE TABLE IF NOT EXISTS ( 
