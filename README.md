@@ -68,4 +68,4 @@ $queryBuilder->delete('users', ['age' => 17]); // DELETE users WHERE age = 17
 
 
 
-For further information check the API docs : dimensi0n.github.io/simple-query/api
+For further information check the API docs : [dimensi0n.github.io/simple-query/api](dimensi0n.github.io/simple-query/api)
