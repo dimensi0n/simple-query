@@ -86,7 +86,7 @@ class QueryBuilder extends \PDO
     public function create(string $name, array $fields) : QueryBuilder
     {
         try {
-            $sql = 'CREATE TABLE IF NOT EXISTS '.$name.' ( id INTEGER PRIMARY KEY';
+            $sql = 'CREATE TABLE IF NOT EXISTS '.$name.' ( id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT';
             foreach ($fields as $key => $value) {
                 $sql .= ", ".$key." ".$value['type'];
                 isset($value['notNullable']) ? $sql .= ' NOT NULL ': '';
